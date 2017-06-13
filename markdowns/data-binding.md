@@ -1,14 +1,14 @@
-Let's take a look at how Data-Binding works in Angular. Displaying stuff in your template is still done with the `{{ doubleCurlyBrackets }}` notation, so that's pretty easy, but other than that, passing variables and events to components happens with different notations.
+Let's take a look at how Data-Binding works in Angular. Displaying stuff in your template is still done with the `{{ doubleCurlyBrackets }}` notation. Other than that, passing variables and events to components happens with different notations.
 
 # Variables (input)
 
-You use input binding to pass the value of a variable to a child component. In **Angular1** you used to do
+You use input binding to pass the value of a variable to a child component. In **Angular1** you used to do something like this:
 
 ```html
 <directive child-name="scopeVariable">
 ```
 
-But now with **Angular**, you will use the `[]` square bracket notation, like so
+But now with **Angular**, you will use the `[]` square bracket notation, like so:
 
 ```html
 <directive [childName]="scopeVariable">
@@ -32,19 +32,19 @@ Let's try it out, shall we?
 
 # Events (output)
 
-Two-ways binding doesn't really exist in Angular anymore, so when you want to send data upward to the parent component, you need to use events. Events are defined with the `()` notation like this:
+Two-ways binding doesn't really exist in Angular anymore. Now, when you want to send data upward to the parent component, you need to use events. Events are defined with the `()` notation like this:
 
 ```html
 <directive (theEvent)="theScopeFunction($event)">
 ```
 
-And guess what, a bunch of events already exist, they are the [HTML DOM events](https://www.w3schools.com/jsref/dom_obj_event.asp), the ones you used to prepend `ng-` to. You can now use what used to be `ngClick` like this:
+Guess what? A bunch of events already exist, known as the [HTML DOM events](https://www.w3schools.com/jsref/dom_obj_event.asp). The same ones you used to prepend `ng-` to. You can now use what used to be `ngClick` like this:
 
 ```html
 <button (click)="clickButton()">
 ```
 
-Cool. But you can also define your own output events, using the *EventEmitter* system. Let's say, you want to create a `highlight` event that is triggered when the user highlights an *item* in a *list*, you will define an event emitter with the `@Output` decorator, and will use it to send events with the `next` method. It will then be exposed to the parent component via the `(highlight)` attribute (note the use of the event syntax `()`). Here's a simple snippet:
+You can also define your own output events using the *EventEmitter* system. Let's say you want to create a `highlight` event that is triggered when the user highlights an *item* in a *list*. First, you define an event emitter with the `@Output` decorator, use it to send events with the `next` method. It will then be exposed to the parent component via the `(highlight)` attribute (note the use of the event syntax `()`). Here's a simple snippet:
 
 @[Output demo]({"stubs": ["output/app/list.ts", "output/app/app.component.ts"], "command": "echo 'CG> open --static-dir /project/target/output index.html'"})
 

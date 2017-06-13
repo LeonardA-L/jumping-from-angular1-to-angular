@@ -1,3 +1,6 @@
+> Unless stated otherwise, `Angular` in this course is version >= 2.0. `Angular1` or `AngularJS` means version < 2.0
+
+
 # Installing the Angular cli
 **You can skip this part and go directly to _The Application Module_ if you simply want to run all of the examples in this course online. This part helps you create and get started with an Angular project on your own computer.**
 
