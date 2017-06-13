@@ -2,7 +2,7 @@ The Angular Dependency Injection system allows you inject, into your components,
 
 # Declaration
 
-In order to inject an `@Injectable`, you need to make sure it is registered in the Dependency Injection system. Let's see how to declare and register injectables. If you want to create a class that is used as a singleton throughout your module (for instance, a service) you should create your class and add the `@Injectable` decorator to it.
+In order to inject an `@Injectable`, you need to make sure it is registered in the Dependency Injection system. Let's find out how to declare and register injectables. If you want to create a class that is used as a singleton throughout your module, a service for instance, you should create your class and add the `@Injectable` decorator to it.
 
 ```javascript
 @Injectable()
@@ -13,7 +13,7 @@ export class TheService {
 }
 ```
 
-Then you need to register it as a _provider_ for the component(s) you want to use it in, by using the `providers` property of the `@Component` decorator:
+Then, you need to register it as a _provider_ for the component(s) you want to use it in. You can do this by using the `providers` property of the `@Component` decorator:
 
 ```javascript
 import { TheService } from './the-service.ts';
